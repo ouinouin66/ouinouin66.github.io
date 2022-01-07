@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portfolio</title>
+    <meta name="description" content="Description de mon site" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Diego Gonzalez/devoir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Menu Latéral caché -->
+<nav>
+    <a href="#" class="close">
+        <i class="fas fa-times"></i>
+    </a>
+    <img src="../Diego Gonzalez/img/logo_folio.png" alt="Mon logo" />
+    <div class="nav-links">
+        <a href="#" title="Accueil">Accueil</a>
+        <a href="#" title="Me contacter">Me contacter</a>
+        <a href="#" title="Mes qualités">Mes qualités</a>
+        <a href="#" title="Mes projets">Mes projets</a>
+    </div>
+    <p>&copy; 2021 - Diego Gonzalez - Tous Droits Réservés</p>
+</nav>
+<!--
+Header avec logo background et icône du menu
+-->
+<header>
+    <div class="header-content">
+        <img src="../Diego Gonzalez/img/logo_folio.png" id="logo" alt="Mon logo" />
+        <a href="#" title="Menu" id="burger">
+            <img src="../Diego Gonzalez/img/menu_burger_icon.png">
+        </a>
+    </div>
+</header>
+<!-- Conteneur -->
+<main>
+    <div class="container">
+        <!-- Bonjour + Déco -->
+        <div class="hello">
+            <div class="left">
+                <h1>Bienvenue,</h1>
+                <p>Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés.</p>
+            </div>
+            <div class="right">
+                <img src="../Diego Gonzalez/img/deco_2.png" alt="Eclair">
+            </div>
+        </div>
+        <!-- Grille des carrés -->
+        <h2>Mes qualités</h2>
+        <div class="works">
+            <div class="work">
+                <i class="fas fa-user"></i>
+                <h3>Je suis sociable</h3>
+            </div>
+            <div class="work">
+                <i class="fas fa-cubes"></i>
+                <h3>J'aime les activités manuelles</h3>
+            </div>
+            <div class="work">
+                <i class="fas fa-terminal"></i>
+                <h3>Je code</h3>
+                <div class="read-more-btn-container">
+                    <a href="#" class="see-more">En savoir plus</a>
+                </div>
+            </div>
+            <div class="work">
+                <i class="fas fa-beer"></i>
+                <h3>J'aime la bière</h3>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Pied de page -->
+<footer>
+    <div class="footer_container">
+        <span class="loading">Chargement</span>
+        <img src="../Diego Gonzalez/img/phone_img.png" alt="Contactez nous">
+        <a class="phone_number" href="tel:1.800.123.456" title="Appelez nous">04 68 92 53 84</a>
+        <p>Dans la vie on ne fait pas ce que l'on veut mais on est responsable de ce que l'on est. <a href="diego.gonzalez@lidem.education" title="Contactez moi par email">diego.gonzalez@lidem.education</a></p>
+        <!-- Réseaux sociaux -->
+        <div class="socials">
+            <a class="social" href="https://fr-fr.facebook.com/" target="_blank">Facebook</a>
+            <a class="social" href="https://www.instagram.com/?hl=fr" target="_blank">Instagram</a>
+            <a class="social" href="" target="_blank">Twitter</a>
+        </div>
+    </div>
+</footer>
+<script>
+    /**
+     * Javascript
+     */
+    //  Quand on clique sur le bouton ayant l'ID "burger" on ajoute
+    //  la classe CSS "active" au menu <nav>
+    document.querySelector('#burger').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelector('nav').classList.add('active');
+    });
+    //  Quand on clique sur la croix du menu ayant la classe CSS .close
+    //  On retire la classe CSS "active" au menu <nav>
+    document.querySelector('.close').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('nav').classList.remove('active');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+/**
+    VARIABLES
+ */
+ :root {
+    --blue: #baecee;
+    --blue-hover: #88e9ea;
+    --pink: #fae1ef;
+    --pink-hover: #f8c5e1;
+    --yellow: #fefbe5;
+    --yellow-hover: #f7f4be;
+    --purple: #e8bdf5;
+    --purple-hover: #e5a1f2;
+    --primary-background: #f2fbfb;
+    --text-color: #403d40;
+    --font: Montserrat, Arial, sans-serif;
+    --global-padding: 30px;
+    --container-width: 75%;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font);
+    width: 100%;
+    margin: 0;
+}
+/**
+    HEADER
+ */
+header {
+    padding: 120px 0 180px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+header:after {
+    content: "";
+    background-image: url("../../assets/imgs/folio/background.png");
+    background-repeat: no-repeat;
+    width: 812px;
+    height: 611px;
+    position: absolute;
+    top: -30%;
+    left: calc(50% - 812px / 2);
+    z-index: -1;
+}
+@media( max-width: 540px ) {
+    header {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+    header:after {
+        top: 0;
+        height: 90px;
+        width: 100%;
+        left: 0;
+    }
+}
+header .header-content {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--container-width);
+}
+@media( max-width: 540px ) {
+    header .header-content {
+        width: 100%;
+        margin: 0 20px;
+    }
+}
+/**
+    MENU LATERAL
+ */
+nav {
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--primary-background);
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s;
+}
+nav.active {
+    transform: translateX(0);
+}
+nav img {
+    margin-bottom: 100px;
+}
+/* Liens du menu */
+nav .nav-links {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+nav .nav-links a {
+    color: black;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 10px;
+    padding: 10px 20px;
+    margin: 15px 0;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.4s;
+}
+nav .nav-links a:hover {
+    color: white;
+    background-color: black;
+}
+nav .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+nav .close i.fas {
+    font-size: 30px;
+}
+@media( max-width: 1084px ) {
+    nav {
+        width: 60%;
+    }
+}
+@media( max-width: 540px ) {
+    nav {
+        width: 100%;
+    }
+    nav .nav-links a {
+        font-size: 25px;
+    }
+}
+/**
+    CONTENEUR PRINCIPAL
+ */
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    z-index: 2;
+}
+/**
+    Conteneur secondaire
+ */
+.container {
+    width: var(--container-width);
+}
+@media( max-width: 540px ) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+/**
+    Bonjour
+ */
+.hello {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+@media( max-width: 540px ) {
+    .hello {
+        flex-direction: column;
+    }
+}
+.hello .left {
+    width: 70%;
+}
+.hello .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.hello .right {
+    transition: 1s;
+}
+.hello .right:hover {
+    transform: rotate(360deg);
+}
+@media (max-width: 540px ) {
+    .hello .left {
+        width: 100%;
+    }
+    .hello .right {
+        width: 100%;
+        margin-top: 80px;
+    }
+}
+/**
+    Titre
+ */
+h1 {
+    font-size: 195px;
+    letter-spacing: 1.8px;
+    line-height: 1px;
+    color: var(--text-color);
+    position: relative;
+}
+h1 + p {
+    display: inline-block;
+}
+@media( max-width: 540px ) {
+    h1 {
+        font-size: 90px;
+    }
+}
+/**
+    Paragraphes + titre h2
+ */
+p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 27px;
+}
+h2 {
+    margin-top: 180px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 30px;
+}
+/**
+    DIV contenant mes carrés en flexbox
+ */
+.works {
+    display: flex;
+    flex-flow: row wrap;
+}
+/**
+    DIV contenant mes carrés en grille
+.works {
+    display: grid;
+    grid-template-columns: repeat(2, 585px);
+}
+ */
+@media( max-width: 540px ) {
+    .works {
+        margin-top: 80px;
+        flex-flow: column wrap;
+    }
+}
+/**
+    UN CARRÉ
+ */
+.works .work {
+    height: 585px;
+    width:50%; /* Uniquement pour l'affichage en flexbox */
+    background-color: var(--primary-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    transition: 0.4s;
+}
+.works .work h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 35px;
+    text-align: center;
+}
+.works .work i.fas {
+    font-size: 180px;
+}
+@media( max-width: 1084px ) {
+    .works .work i.fas {
+        font-size: 120px;
+    }
+    .works .work {
+        height: 350px;
+    }
+}
+@media( max-width: 540px ) {
+    .works .work {
+        width: 100%;
+        height: 320px;
+    }
+    .works .work i.fas {
+        font-size: 80px;
+    }
+    .works .work h3 {
+        margin-top: 20px;
+    }
+}
+.works .work .read-more-btn-container {
+    position: absolute;
+    bottom: 40px;
+    right: 25px;
+}
+@media( max-width: 540px ) {
+    .works .work .read-more-btn-container {
+        bottom: 25px;
+        right: 15px;
+    }
+}
+/**
+    BOUTON READ MORE
+ */
+.works .work a.see-more {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    text-transform: lowercase;
+    text-decoration: none;
+    margin: 0 20px 40px 0;
+    position: relative;
+    transition: 0.5s;
+    color: black;
+    z-index: 3;
+}
+.works .work a.see-more:before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 1px;
+    width: 60px;
+    left: -70%;
+    top: 50%;
+}
+.works .work a.see-more:after {
+    content: "";
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    border: 1px solid black;
+    background-color: transparent;
+    top: -8px;
+    left: -28%;
+    transition: 0.5s;
+    z-index: 1;
+}
+.works .work a.see-more:hover:after {
+    width: 150px;
+}
+/**
+    Ici je gère les couleurs de mes carrés
+    plus les illustrations
+ */
+.work:first-child {
+    order: 1;
+    background-color: var(--blue);
+}
+.work:first-child:hover {
+    background-color: var(--blue-hover);
+}
+.work:first-child:after {
+    content: "";
+    background-image: url("../../assets/imgs/folio/deco_3.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -25%;
+    bottom: -15%;
+    width: 54px;
+    height: 45px;
+}
+.work:nth-child(2) {
+    order: 2;
+    background-color: var(--pink);
+}
+.work:nth-child(2):hover {
+    background-color: var(--pink-hover);
+}
+.work:nth-child(2):after {
+    content: "";
+    background-image: url("../../assets/imgs/folio/deco.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: calc(2% - 105px / 2);
+    top: 15%;
+    width: 105px;
+    height: 58px;
+}
+.work:nth-child(3) {
+    order: 3;
+    background-color: var(--yellow);
+}
+.work:nth-child(3):hover {
+    background-color: var(--yellow-hover);
+}
+.work:last-child {
+    order: 4;
+    background-color: var(--purple);
+}
+.work:last-child:hover {
+    background-color: var(--purple-hover);
+}
+.work:last-child:after {
+    content: "";
+    background-image: url("../../assets/imgs/folio/deco_4.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: calc(-79px / 2);
+    top: calc(50% - 34px / 2);
+    width: 79px;
+    height: 34px;
+}
+@media( max-width: 540px ) {
+    .work:nth-child(2):after {
+        display: none;
+    }
+    .work:nth-child(3) {
+        order: 4;
+        background-color: var(--yellow);
+    }
+    .work:last-child {
+        order: 3;
+        background-color: var(--purple);
+    }
+    .work:last-child:after {
+        display: none;
+    }
+}
+/**
+    FOOTER
+ */
+footer {
+    background-color: var(--primary-background);
+    padding: 200px 0;
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+}
+@media( max-width: 540px ) {
+    footer {
+        padding-bottom: 100px;
+    }
+}
+/**
+    Conteneur de mon footer
+ */
+footer .footer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer span.loading {
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 20.4px;
+    font-weight: 500;
+}
+footer img {
+    padding: 100px 0;
+}
+footer a.phone_number {
+    font-size: 60px;
+    letter-spacing: 1.8px;
+    color: var(--text-color);
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+@media( max-width: 540px ) {
+    footer a.phone_number {
+        font-size: 40px;
+    }
+}
+footer p {
+    max-width: 40%;
+    text-align: center;
+}
+footer a {
+    color: #79e5e9;
+    text-decoration: none;
+}
+/**
+    Affichage des réseaux sociaux
+ */
+footer .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media( max-width: 540px ) {
+    footer .socials {
+        flex-direction: column;
+    }
+}
+/**
+    Un lien de réseaux sociaux
+ */
+footer .socials a.social {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 6.5px;
+    margin: 70px 30px;
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+    transition: 0.3s;
+    padding: 10px 15px;
+}
+footer .socials a.social:hover {
+    color: white;
+    background-color: black;
+}
+@media( max-width: 540px ) {
+    footer .socials a.social {
+        margin: 20px 0;
+    }
+}
+footer .socials a.social:after {
+    content: "";
+    height: 12px;
+    width: 2px;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: calc(100% + 30px);
+    background-color: #b2baba;
+}
+@media( max-width: 540px ) {
+    footer .socials a.social:after {
+        display: none;
+    }
+}
+footer .socials a.social:last-child:after {
+    display: none;
+}
+/**
+    Trait de pied de page
+ */
+footer:after {
+    content: "";
+    height: 10%;
+    width: 2px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1px);
+    background-color: #070707;
+}
+@media( max-width: 540px ) {
+    footer:after {
+        height: 5%;
+    }
+}
